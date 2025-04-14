@@ -1,0 +1,8 @@
+services:
+  main:
+    image: golang:alpine
+    container_name: golang-berth-checker
+    working_dir: /app
+    volumes: 
+      - ./:/app
+    command: sh -c "go mod tidy && go run cmd/app/main.go"
