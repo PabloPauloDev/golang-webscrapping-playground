@@ -17,7 +17,7 @@ var (
 
 func GetPool() *pgxpool.Pool {
 	initOnce.Do(func() {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 5000*time.Second)
 		defer cancel()
 
 		dsn := os.Getenv("DATABASE_URL")
